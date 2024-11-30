@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://example.org/diagnostico.owl"
+         xmlns="http://example.org/diagnostico.owl#">
+
+<owl:Ontology rdf:about="http://example.org/diagnostico.owl"/>
+
+<owl:ObjectProperty rdf:about="#hasSymptom">
+  <rdfs:domain rdf:resource="#Doenca"/>
+  <rdfs:range rdf:resource="#Sintoma"/>
+</owl:ObjectProperty>
+
+<owl:Class rdf:about="#Doenca">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Sintoma">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:NamedIndividual rdf:about="#febre">
+  <rdf:type rdf:resource="#Sintoma"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#tosse">
+  <rdf:type rdf:resource="#Sintoma"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#coriza">
+  <rdf:type rdf:resource="#Sintoma"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Gripe">
+  <rdf:type rdf:resource="#Doenca"/>
+  <hasSymptom rdf:resource="#febre"/>
+  <hasSymptom rdf:resource="#tosse"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Resfriado">
+  <rdf:type rdf:resource="#Doenca"/>
+  <hasSymptom rdf:resource="#coriza"/>
+</owl:NamedIndividual>
+
+
+</rdf:RDF>
